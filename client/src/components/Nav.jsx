@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
+import Logo from './Logo';
+
 const StyledNav = styled.nav`
   width: 100%;
 `;
@@ -12,14 +14,22 @@ const NavMenu = styled.ul`
 `;
 
 const NavMenuItem = styled.li`
-  padding: 0 10px;
+  margin: 0 10px;
+`;
+
+const LogoStyle = styled.h1`
+  margin: 0;
+  padding: 0;
+  font-size: 29px;
+  letter-spacing: -2px;
+  color: #333;
 `;
 
 const Nav = () => (
   <StyledNav>
     <NavMenu>
       <NavMenuItem>
-        Logo
+        <LogoStyle>JA!</LogoStyle>
       </NavMenuItem>
       <NavMenuItem>
         Overview

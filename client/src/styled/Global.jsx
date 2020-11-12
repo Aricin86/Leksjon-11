@@ -6,11 +6,13 @@ export const GlobalStyles = createGlobalStyle`
     box-sizing: border-box;
   }
   html {
+    font-family: 'Open Sans', sans-serif;
     font-size: 10px;
   }
   body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-weight: bold;
+    h1, h2, h3, h4, h5, h6 {
+    font-family: 'Roboto', sans-serif;
+    }
     h1 {
       font-size: 4rem;
     }
@@ -21,6 +23,7 @@ export const GlobalStyles = createGlobalStyle`
       font-size: 2rem;
     }
     p {
+      font-family: 'Open Sans', sans-serif;
       font-size: 1.6rem;
     }
   }
