@@ -1,4 +1,5 @@
 import Poll from '../models/poll.js';
+import Question from '../models/question.js';
 
 export const getPollById = async (id) => Poll.findById(id);
 
@@ -17,4 +18,11 @@ export const updatePoll = async (id, data) =>
 export const removePoll = async (id) => {
   const poll = await Poll.findById(id);
   poll.remove();
+};
+
+export const listPollQuestions = async (id) => {
+  if (id) {
+    const questions = await Question.find({ poll: id }).populate('question');
+    return questions;
+  }
 };

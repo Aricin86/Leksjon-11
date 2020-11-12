@@ -9,4 +9,6 @@ router.post('/', pollController.create);
 router.put('/:id', pollController.update);
 router.delete('/:id', pollController.remove);
 
+router.get('/:id/questions', pollController.listQuestions);
+
 export default router;

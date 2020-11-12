@@ -7,8 +7,14 @@ export const create = catchAsyncErrors(async (req, res, next) => {
   res.status(201).json(user);
 });
 
-export const listPolls = catchAsyncErrors(async (req, res, next) => {
+export const listPollsCreated = catchAsyncErrors(async (req, res, next) => {
   const { id } = req.params;
-  const polls = await userService.listUserPolls(id);
+  const polls = await userService.listUserPollsCreated(id);
+  res.status(200).json(polls);
+});
+
+export const listPollsTaken = catchAsyncErrors(async (req, res, next) => {
+  const { id } = req.params;
+  const polls = await userService.listUserPollsTaken(id);
   res.status(200).json(polls);
 });

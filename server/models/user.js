@@ -10,8 +10,8 @@ const UserSchema = new Schema(
       type: String,
       required: [true, 'Username is required.'],
       unique: true,
-      min: ['3', 'A user must have more than 3 characters.'],
-      max: ['20', 'A username must be less than 20 characters.'],
+      minlength: ['3', 'A user must have more than 3 characters.'],
+      maxlength: ['20', 'A username must be less than 20 characters.'],
     },
     email: {
       type: String,
@@ -23,14 +23,9 @@ const UserSchema = new Schema(
       type: String,
       required: [true, 'Password is needed.'],
       minlength: [4, 'The password need to have a minimum of 4 characters.'],
+      maxlength: ['40', 'The password must be less than 40 characters.'],
       select: false,
     },
-    pollsAnswered: [
-      {
-        type: mongoose.Schema.ObjectId,
-        ref: 'Poll',
-      },
-    ],
   },
   { timestamps: true, toJSON: { virtuals: true }, toObject: { virtuals: true } }
 );
@@ -44,6 +39,13 @@ UserSchema.virtual('polls', {
   ref: 'Poll',
   localField: '_id',
   foreignField: 'pollster',
+  justOne: false,
+});
+
+UserSchema.virtual('pollExecutions', {
+  ref: 'PollExecution',
+  localField: '_id',
+  foreignField: 'respondent',
   justOne: false,
 });
 

@@ -17,7 +17,7 @@ export default (err, req, res, next) => {
     error.message = err.message;
 
     if (err.name === 'CastError') {
-      const message = `Could not find the resource you were looking for. Not valid ${err.path}`;
+      const message = `Could not find the resource you were looking for. Not valid ${err.path}.`;
       error = new ErrorHandler(message, 404);
     }
 
