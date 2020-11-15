@@ -4,10 +4,10 @@ import { GlobalStyles } from './Global';
 
 const theme = {
   body: '#FFF',
-  text: '#363537',
+  text: '#333',
   background: '#999',
   colors: {
-    default: '#333',
+    default: '#707070',
     warning: '#ff6347',
     info: '#167df6',
     success: '#5cb85c',

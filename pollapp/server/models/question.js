@@ -7,8 +7,8 @@ const QuestionSchema = new Schema(
     question: {
       type: String,
       required: true,
-      minlength: ['6', 'A question must have more than 6 characters.'],
-      maxlength: ['250', 'A question must be less than 250 characters.'],
+      minlength: [6, 'A question must have at least 6 characters.'],
+      maxlength: [250, 'A question must be 250 characters or less.'],
     },
     poll: {
       type: mongoose.Schema.ObjectId,

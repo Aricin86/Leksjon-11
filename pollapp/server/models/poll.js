@@ -7,8 +7,8 @@ const PollSchema = new Schema(
     title: {
       type: String,
       required: true,
-      minlength: ['3', 'A title must have more than 3 characters.'],
-      maxlength: ['40', 'A title must be less than 40 characters.'],
+      minlength: [3, 'A title must have at least 3 characters.'],
+      maxlength: [40, 'A title must be 40 characters or less.'],
     },
     pollster: {
       type: mongoose.Schema.ObjectId,
